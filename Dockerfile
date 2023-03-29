@@ -8,8 +8,10 @@ COPY package.json /app/package.json
 
 RUN yarn install
 
+RUN npm install -g nodemon
+
 COPY . /app
 
 EXPOSE 3000
 
-CMD ["yarn", "serve"]
+CMD ["yarn", "start"]

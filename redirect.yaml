@@ -1,0 +1,17 @@
+redirect:
+  - hostTarget: "http://172.17.0.1:8080/"
+    basePath: "/arduino-websocket"
+    oauthHandler: "http://172.17.0.1:8081/"
+    requiredAuthorization: true
+    pathRewrite:
+      "/arduino-websocket": "arduino-websocket"
+    openPaths:
+      - "/arduino-websocket/api/authorization"
+      - "/arduino-websocket/api/v1/lights"
+      - "/arduino-websocket/api/v1/listener"
+      - "/arduino-websocket/api/v1/health"
+  - hostTarget: "http://172.17.0.1:8081/"
+    basePath: "/auth-api"
+    requiredAuthorization: false
+    pathRewrite:
+      "/auth-api": "auth-api"
