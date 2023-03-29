@@ -10,7 +10,8 @@ const proxyRegistry = (app, proxyDefinition) => {
         onProxyRes: (proxyRes, req, res, options) => {
             console.log(`${proxyDefinition.host}${req.url}`)
         },
-        changeOrigin: false
+        changeOrigin: false,
+        ws: true
     });
     app.use(middleware)
 }
